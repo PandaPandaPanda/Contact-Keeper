@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 // Use config to store some default configuration
 const config = require("config");
 // Retrive mongoDB URI from config
-const db = config.get("mongoURI") || process.env.mongoURI;
+const db = process.env.mongoURI || config.get("mongoURI");
 
 const connectDB = async () => {
   try {
